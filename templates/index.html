@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Agent 모니터링 테스트</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
+        .container { max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px; }
+        input, button { padding: 10px; margin: 5px 0; width: 100%; box-sizing: border-box; }
+        button { background-color: #0078D4; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #005A9E; }
+        .result-box { margin-top: 20px; padding: 15px; background-color: #f9f9f9; border-left: 4px solid #0078D4; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>AI Agent 수동 테스트 모니터링</h2>
+        <form method="post" action="/test-agent">
+            <label for="userId">User ID (테스트용):</label>
+            <input type="text" id="userId" name="userId" value="TestUser" required>
+            
+            <label for="stockTicker">Stock Ticker:</label>
+            <input type="text" id="stockTicker" name="stockTicker" placeholder="ex) NVDA" required>
+            
+            <button type="submit">분석 실행 (End-to-End Test)</button>
+        </form>
+
+        {% if result %}
+        <div class="result-box">
+            <h3>분석 결과 (Source: {{ result.source }})</h3>
+            <p><strong>Ticker:</strong> {{ result.stockTicker }}</p>
+            <p><strong>추천 점수(Score):</strong> {{ result.score }} / 5</p>
+            <p><strong>LLM 의견:</strong> {{ result.LlmReply }}</p>
+            {% if debug_info %}
+            <hr>
+            <h4>[디버그 정보]</h4>
+            <p style="font-size: 0.9em; color: #555;">{{ debug_info }}</p>
+            {% endif %}
+        </div>
+        {% endif %}
+
+        {% if error %}
+        <div class="result-box error">
+            <h3>오류 발생</h3>
+            <p>{{ error }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
+
