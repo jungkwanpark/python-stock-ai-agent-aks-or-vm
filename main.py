@@ -31,8 +31,8 @@ PG_DB = "YOUR-POSTGRES-DATABASE-NAME"
 PG_USER = "YOUR-USERNAME"
 PG_PW = "YOUR-POSTGRE-PASSWORD"  # 실제 비밀번호
 
-MCP_BASE_URL = "https://mcp-function-app-777-gddjhrd4ceh5a0f5.koreacentral-01.azurewebsites.net/api/stock/{}"
-APIM_URL = "https://apim-777.azure-api.net/gpt-4/openai/deployments/gpt-4.1/chat/completions?api-version=2025-03-01-preview"
+MCP_BASE_URL = "https://YOUR-MCP-FUNCTION-APP-DOMAIN.koreacentral-01.azurewebsites.net/api/stock/{}"
+APIM_URL = "https://YOUR-APIM-DOMAIN.azure-api.net/gpt-4/openai/deployments/gpt-4.1/chat/completions?api-version=2025-03-01-preview"
 
 # Redis 클라이언트 초기화 (SSL 및 Keep-alive 옵션 추가 반영)
 redis_client = redis.Redis(
