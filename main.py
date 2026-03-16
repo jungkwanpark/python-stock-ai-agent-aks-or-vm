@@ -21,15 +21,15 @@ templates = Jinja2Templates(directory="templates")
 # 1. 외부 연결 설정 정보
 # ==========================================
 
-REDIS_HOST = "azure-redis-777.koreacentral.redis.azure.net"
+REDIS_HOST = "YOUR-REDIS-DOMAIN.koreacentral.redis.azure.net"
 REDIS_PORT = 10000
-REDIS_PW = "MR5hHkSbMpVg62yl91rO5Jk5RNQuJltnmAzCaMnxJxA="
+REDIS_PW = "YOUR-REDIS-AUTHENTICATION-KEY"
 
-PG_HOST = "postgre777.postgres.database.azure.com"
+PG_HOST = "YOUR-POSTGRES-DOMAIN.postgres.database.azure.com"
 PG_PORT = 5432
-PG_DB = "postgres"
-PG_USER = "jungkwan"
-PG_PW = "rjd13038!!!!!"  # 실제 비밀번호
+PG_DB = "YOUR-POSTGRES-DATABASE-NAME"
+PG_USER = "YOUR-USERNAME"
+PG_PW = "YOUR-POSTGRE-PASSWORD"  # 실제 비밀번호
 
 MCP_BASE_URL = "https://mcp-function-app-777-gddjhrd4ceh5a0f5.koreacentral-01.azurewebsites.net/api/stock/{}"
 APIM_URL = "https://apim-777.azure-api.net/gpt-4/openai/deployments/gpt-4.1/chat/completions?api-version=2025-03-01-preview"
