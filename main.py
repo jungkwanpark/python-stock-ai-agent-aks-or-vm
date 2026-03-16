@@ -127,7 +127,7 @@ def process_stock_analysis(user_id: str, ticker: str):
     """
 
     apim_headers = {
-        "Host": "apim-777.azure-api.net",
+        "Host": "YOUR-APIM-DOMAIN.azure-api.net",
         "Content-Type": "application/json"
     }
     
