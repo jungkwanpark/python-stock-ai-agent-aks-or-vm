@@ -145,7 +145,8 @@ def process_stock_analysis(user_id: str, ticker: str):
     # ---------------------------------------------------------
     try:
         debug_log.append("APIM (GPT-4.1) 호출 중...")
-        apim_response = requests.post(APIM_URL, headers=apim_headers, json=apim_payload, timeout=10)
+        # APIM 응답 대기 시간을 120초로 넉넉하게 설정
+        apim_response = requests.post(APIM_URL, headers=apim_headers, json=apim_payload, timeout=120)
         apim_response.raise_for_status()
         
         result_json = apim_response.json()
